@@ -3,19 +3,21 @@ export const renderLayout = (app) => {
     <div class="envelope-overlay" id="envelope-overlay">
       <div class="envelope-perspective">
         <div class="envelope" aria-label="Открыть приглашение">
-          <div class="envelope-shadow"></div>
-          <div class="envelope-left"></div>
-          <div class="envelope-right"></div>
-          <div class="envelope-bottom"></div>
-          <div class="envelope-flap"></div>
+          <div class="envelope-canvases">
+            <canvas id="env-base"></canvas>
+            <canvas class="env-part" id="env-top"></canvas>
+            <canvas class="env-part" id="env-left"></canvas>
+            <canvas class="env-part" id="env-right"></canvas>
+            <canvas class="env-part" id="env-bottom"></canvas>
+          </div>
           <div class="envelope-text">
             <div class="script">С любовью</div>
-            <div class="names">Максим & Даша</div>
-            <div class="date">07 · 06 · 2025</div>
+            <div class="names">Максим & Дарья</div>
+            <div class="date">27 · 06 · 2026</div>
           </div>
-          <button class="seal" id="open-envelope" aria-label="Открыть конверт">
-            <span class="seal-letter">M & D</span>
-          </button>
+          <div class="seal" id="open-envelope" role="button" aria-label="Открыть конверт" tabindex="0">
+            <img src="/media/md.png" alt="Печатка" />
+          </div>
           <div class="seal-note-card">Нажмите, чтобы открыть</div>
         </div>
       </div>
@@ -26,29 +28,25 @@ export const renderLayout = (app) => {
       <div class="bg-blur decor-two"></div>
 
       <header class="hero classic" id="top">
+        <div class="hero-bg">
+          <video class="hero-bg-video" src="/media/IMG_7378.MP4" autoplay muted loop playsinline></video>
+          <div class="hero-bg-overlay"></div>
+        </div>
         <div class="hero-text">
           <p class="eyebrow">Приглашение</p>
-          <h1>Максим & Даша</h1>
+          <h1>Максим & Дарья</h1>
           <p class="lead">
             Мы приглашаем вас разделить день, когда наши истории станут одной.
             Тёплый вечер у воды, музыка и свет гирлянд — будем счастливы видеть вас.
           </p>
           <div class="date-row">
-            <span class="date-chip">7 июня 2025</span>
-            <span class="date-chip">Усадьба у озера · сбор гостей 16:00</span>
+            <span class="date-chip">27 июня 2026</span>
+            <span class="date-chip">Вилла-отель «Provence» · сбор гостей 15:00</span>
           </div>
           <div class="hero-actions">
             <button class="btn primary" data-scroll="#rsvp">Ответить</button>
             <button class="btn ghost" data-scroll="#timeline">Программа</button>
           </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-frame">
-            <img src="/media/IMG_7358.JPG" alt="Максим и Даша" />
-            <div class="soft-border"></div>
-          </div>
-          <video class="hero-video" src="/media/IMG_7378.MP4" autoplay muted loop playsinline></video>
-          <p class="muted caption">Несколько секунд нашего настроения</p>
         </div>
       </header>
 
@@ -64,13 +62,38 @@ export const renderLayout = (app) => {
         <div class="location-card">
           <div>
             <p class="eyebrow">Локация</p>
-            <h3>Усадьба у озера, Подмосковье</h3>
-            <p class="muted">Сбор гостей в 16:00 · Церемония в 17:00 · Ужин и танцы до позднего вечера</p>
+            <h3>Вилла-отель «Provence»</h3>
+            <p class="muted">г. Наро-Фоминск, Щекутино, 22. Сбор гостей в 15:00 · Церемония в 16:00 · Ужин до позднего вечера</p>
           </div>
           <div class="calendar-pill">
             <span class="month">Июнь</span>
-            <span class="day">07</span>
-            <span class="year">2025</span>
+            <span class="day">27</span>
+            <span class="year">2026</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section countdown" id="countdown" aria-labelledby="countdown-title">
+        <div class="section-header center">
+          <p class="eyebrow">До свадьбы осталось</p>
+          <h2 id="countdown-title">Соберёмся вместе 27 июня 2026</h2>
+        </div>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span class="value" id="cd-days">—</span>
+            <span class="label">дней</span>
+          </div>
+          <div class="countdown-item">
+            <span class="value" id="cd-hours">—</span>
+            <span class="label">часов</span>
+          </div>
+          <div class="countdown-item">
+            <span class="value" id="cd-minutes">—</span>
+            <span class="label">минут</span>
+          </div>
+          <div class="countdown-item">
+            <span class="value" id="cd-seconds">—</span>
+            <span class="label">секунд</span>
           </div>
         </div>
       </section>
@@ -82,7 +105,7 @@ export const renderLayout = (app) => {
         </div>
         <div class="timeline-list">
           <div class="timeline-item">
-            <div class="time">16:00</div>
+            <div class="time">15:00</div>
             <div class="dot"></div>
             <div class="info">
               <h3>Сбор гостей</h3>
@@ -90,7 +113,7 @@ export const renderLayout = (app) => {
             </div>
           </div>
           <div class="timeline-item">
-            <div class="time">17:00</div>
+            <div class="time">16:00</div>
             <div class="dot"></div>
             <div class="info">
               <h3>Церемония у воды</h3>
@@ -98,10 +121,10 @@ export const renderLayout = (app) => {
             </div>
           </div>
           <div class="timeline-item">
-            <div class="time">18:30</div>
+            <div class="time">17:00</div>
             <div class="dot"></div>
             <div class="info">
-              <h3>Ужин и тосты</h3>
+              <h3>Праздничный банкет</h3>
               <p>Сезонное меню, живые истории и бокалы, наполненные теплом.</p>
             </div>
           </div>
@@ -109,10 +132,32 @@ export const renderLayout = (app) => {
             <div class="time">21:00</div>
             <div class="dot"></div>
             <div class="info">
-              <h3>Танцы под звёздами</h3>
-              <p>Свободная атмосфера, пледы на случай вечерней прохлады и любимые треки.</p>
+              <h3>Торт</h3>
+              <p>Сладкая традиция, которую мы не можем обойти стороной.</p>
             </div>
           </div>
+          <div class="timeline-item">
+            <div class="time">22:00</div>
+            <div class="dot"></div>
+            <div class="info">
+              <h3>Вечернее шоу</h3>
+              <p>Музыка, танцы и искры — остаёмся до позднего вечера.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section kids" id="kids" aria-labelledby="kids-title">
+        <div class="section-header center">
+          <p class="eyebrow">А помните, какими мы были?</p>
+          <h2 id="kids-title">Немного детских кадров</h2>
+          <p class="muted">Теплый мудборд из снимков детства — для улыбки перед праздником.</p>
+        </div>
+        <div class="kids-grid">
+          <img src="/media/children/IMG_7793.PNG" alt="Детское фото 1" class="kids-card tall" />
+          <img src="/media/children/IMG_7794.PNG" alt="Детское фото 2" class="kids-card" />
+          <img src="/media/children/IMG_7795.PNG" alt="Детское фото 3" class="kids-card wide" />
+          <img src="/media/children/IMG_7796.PNG" alt="Детское фото 4" class="kids-card" />
         </div>
       </section>
 
@@ -151,13 +196,43 @@ export const renderLayout = (app) => {
             <img src="/media/IMG_7374.JPG" alt="Тепло заката" />
           </div>
           <div class="gallery-card">
-            <img src="/media/IMG_7358.JPG" alt="Максим и Даша" />
+            <img src="/media/IMG_7358.JPG" alt="Максим и Дарья" />
           </div>
           <div class="gallery-card video-card">
             <video src="/media/IMG_7378.MP4" controls loop playsinline></video>
           </div>
           <div class="gallery-card">
             <img src="/media/IMG_7793.PNG" alt="Детали" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section contacts" id="contacts" aria-labelledby="contacts-title">
+        <div class="section-header center">
+          <p class="eyebrow">Контакты</p>
+          <h2 id="contacts-title">Свяжитесь с нами</h2>
+          <p class="muted">
+            По всем вопросам и сюрпризам — лучше заранее написать.
+          </p>
+        </div>
+        <div class="contacts-grid">
+          <div class="contact-card">
+            <p class="card-eyebrow">Ведущая</p>
+            <h3>Ирина</h3>
+            <p class="muted">По всем вопросам, связанным с сюрпризами.</p>
+            <a class="contact-link" href="tel:+79299756698">+7 929 975-66-98</a>
+          </div>
+          <div class="contact-card">
+            <p class="card-eyebrow">Невеста</p>
+            <h3>Дарья</h3>
+            <p class="muted">Если нужен быстрый контакт с невестой.</p>
+            <a class="contact-link" href="tel:+79999786937">+7 999 978-69-37</a>
+          </div>
+          <div class="contact-card">
+            <p class="card-eyebrow">Жених</p>
+            <h3>Максим</h3>
+            <p class="muted">Если нужен быстрый контакт с женихом.</p>
+            <a class="contact-link" href="tel:+79851359529">+7 985 135-95-29</a>
           </div>
         </div>
       </section>

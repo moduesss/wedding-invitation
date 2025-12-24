@@ -5,6 +5,7 @@ import { setupAutoplay } from './audio'
 import { setupEnvelope } from './envelope'
 import { setupForm } from './form'
 import { setupAnimations } from './animations'
+import { setupCountdown } from './countdown'
 
 const app = document.querySelector('#app')
 renderLayout(app)
@@ -16,3 +17,4 @@ setupEnvelope(attemptAutoplay)
 setupSmoothScroll()
 setupForm()
 setupAnimations()
+setupCountdown()
