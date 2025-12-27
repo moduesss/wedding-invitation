@@ -323,6 +323,12 @@ export const renderLayout = (app) => {
           </div>
         </form>
       </section>
+
+      <footer class="site-footer">
+        <a class="site-footer-link" href="https://www.instagram.com/aquarsmooduesss/" target="_blank" rel="noopener noreferrer">
+          design &amp; prod by dima aquarsmooduesss
+        </a>
+      </footer>
     </div>
     <audio id="wedding-song" src="${base}audio/song.mp3" preload="auto" autoplay loop></audio>
   `
