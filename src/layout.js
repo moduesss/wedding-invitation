@@ -51,18 +51,18 @@ export const renderLayout = (app) => {
           <div class="hero-bg-overlay"></div>
         </div>
         <div class="hero-text">
-          <p class="eyebrow">Приглашение</p>
+          <p class="eyebrow hero">Приглашение</p>
           <h1 class="header-text">Максим & Дарья</h1>
           <p class="lead">
             Мы приглашаем вас разделить день, когда наши истории станут одной.
-            Тёплый вечер у воды, музыка и свет гирлянд — будем счастливы видеть вас.
+            Тёплый летний вечер, музыка и свет гирлянд — будем счастливы видеть вас.
           </p>
           <div class="date-row">
             <span class="date-chip">27 июня 2026</span>
             <span class="date-chip">Вилла-отель «Provence» · сбор гостей 15:00</span>
           </div>
           <div class="hero-actions">
-            <button class="btn primary" data-scroll="#rsvp">Ответить</button>
+            <button class="btn primary" data-scroll="#rsvp">Ответить на приглашение</button>
             <button class="btn ghost" data-scroll="#timeline">Программа</button>
           </div>
         </div>

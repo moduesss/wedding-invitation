@@ -95,8 +95,8 @@ export const setupCalendarCanvas = () => {
       const y = gridTop + row * cellHeight + cellHeight / 2
 
       if (day === highlightDay) {
-        const size = Math.min(cellWidth, cellHeight) * 0.7
-        drawHeart(ctx, x, y - size * 0.45, size, palette.cocoa)
+        const size = Math.min(cellWidth, cellHeight) * 0.9
+        drawHeart(ctx, x, y - size * 0.55, size, palette.cocoa)
         ctx.fillStyle = palette.cream
       } else {
         ctx.fillStyle = palette.ink
