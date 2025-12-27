@@ -317,6 +317,23 @@ body.video-active .location-card {
   min-width: 96px;
 }
 
+.calendar-canvas-wrap {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: fit-content;
+}
+
+.calendar-canvas {
+  width: clamp(200px, 26vw, 240px);
+  aspect-ratio: 3 / 4;
+  border-radius: 18px;
+  border: 1px solid rgba(132, 104, 81, 0.16);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 24px rgba(44, 36, 27, 0.12);
+  display: block;
+}
+
 body.video-active .calendar-pill {
   background: rgba(255, 255, 255, 0.92);
 }
@@ -974,6 +991,10 @@ textarea:focus {
 
   .calendar-pill {
     width: 100%;
+  }
+
+  .calendar-canvas {
+    width: min(100%, 320px);
   }
 
   .timeline-list {

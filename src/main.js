@@ -8,6 +8,7 @@ import { setupAnimations } from './animations'
 import { setupCountdown } from './countdown'
 import { setupMobileSlider } from './slider'
 import { setupKids } from './kids'
+import { setupCalendarCanvas } from './calendar'
 
 const app = document.querySelector('#app')
 renderLayout(app)
@@ -34,3 +35,4 @@ setupAnimations()
 setupCountdown()
 setupMobileSlider()
 setupKids()
+setupCalendarCanvas()

@@ -83,10 +83,8 @@ export const renderLayout = (app) => {
             <h3>Вилла-отель «Provence»</h3>
             <p class="muted">г. Наро-Фоминск, Щекутино, 22. Сбор гостей в 15:00 · Церемония в 16:00 · Ужин до позднего вечера</p>
           </div>
-          <div class="calendar-pill">
-            <span class="month">Июнь</span>
-            <span class="day">27</span>
-            <span class="year">2026</span>
+          <div class="calendar-canvas-wrap">
+            <canvas id="calendar-canvas" class="calendar-canvas" role="img" aria-label="Календарь: июнь 2026"></canvas>
           </div>
         </div>
       </section>
