@@ -14,8 +14,20 @@ renderLayout(app)
 
 const song = document.getElementById('wedding-song')
 const attemptAutoplay = setupAutoplay(song)
+const pageVideo = document.getElementById('page-video-media')
+const pageVideoWrap = document.getElementById('page-video')
 
-setupEnvelope(attemptAutoplay)
+const handleReveal = () => {
+  attemptAutoplay()
+  document.body.classList.add('video-active')
+  if (pageVideoWrap) pageVideoWrap.classList.add('active')
+  if (pageVideo) {
+    pageVideo.muted = true
+    pageVideo.play().catch(() => {})
+  }
+}
+
+setupEnvelope(handleReveal)
 setupSmoothScroll()
 setupForm()
 setupAnimations()

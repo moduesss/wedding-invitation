@@ -30,18 +30,28 @@ export const renderLayout = (app) => {
       </div>
     </div>
 
+    <div class="page-video" id="page-video" aria-hidden="true">
+      <video
+        id="page-video-media"
+        src="${base}media/videos/background.mp4"
+        muted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+    </div>
+
     <div class="page hidden" id="page">
       <div class="bg-blur decor-one"></div>
       <div class="bg-blur decor-two"></div>
 
       <header class="hero classic" id="top">
         <div class="hero-bg">
-          <video class="hero-bg-video" src="${base}media/IMG_7378.MP4" autoplay muted loop playsinline></video>
+          <video class="hero-bg-video" src="${base}media/videos/IMG_7378.MP4" autoplay muted loop playsinline></video>
           <div class="hero-bg-overlay"></div>
         </div>
         <div class="hero-text">
           <p class="eyebrow">Приглашение</p>
-          <h1 class="header-text">Максим & Дарья</h1>
           <h1 class="header-text">Максим & Дарья</h1>
           <p class="lead">
             Мы приглашаем вас разделить день, когда наши истории станут одной.
@@ -124,7 +134,7 @@ export const renderLayout = (app) => {
             <div class="time">16:00</div>
             <div class="dot"></div>
             <div class="info">
-              <h3>Церемония у воды</h3>
+              <h3>Торжественная церемония</h3>
               <p>Клятвы и лёгкий ветер. Просим занять места за 10 минут до начала.</p>
             </div>
           </div>

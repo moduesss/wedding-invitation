@@ -38,12 +38,33 @@ body {
   z-index: 1;
 }
 
+.page-video {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.page-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.9) brightness(0.7);
+}
+
+.page-video.active {
+  opacity: 1;
+}
+
 .page {
   position: relative;
   min-height: 100vh;
   padding: 56px clamp(16px, 4vw, 82px) 96px;
   overflow: hidden;
   transition: opacity 0.4s ease;
+  z-index: 1;
 }
 
 .page.hidden {
@@ -116,7 +137,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 12px;
-  color: var(--taupe);
+  color: var(--ink);
   font-weight: 700;
 }
 
@@ -155,7 +176,7 @@ h3 {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  border-radius: 32px;
+  border-radius: 20px;
 }
 
 .hero-bg-video {
@@ -258,6 +279,14 @@ h3 {
   background: linear-gradient(145deg, rgba(246, 241, 231, 0.92), rgba(231, 219, 208, 0.82));
 }
 
+body.video-active .section {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+body.video-active .silk-card {
+  background: linear-gradient(145deg, rgba(246, 241, 231, 0.6), rgba(231, 219, 208, 0.6));
+}
+
 .location-card {
   display: flex;
   justify-content: space-between;
@@ -268,6 +297,10 @@ h3 {
   border-radius: 18px;
   border: 1px solid rgba(132, 104, 81, 0.16);
   background: rgba(255, 255, 255, 0.7);
+}
+
+body.video-active .location-card {
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .calendar-pill {
@@ -282,6 +315,10 @@ h3 {
   font-weight: 700;
   color: var(--ink);
   min-width: 96px;
+}
+
+body.video-active .calendar-pill {
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .calendar-pill .day {
@@ -365,6 +402,10 @@ h3 {
   box-shadow: 0 10px 22px rgba(44, 36, 27, 0.12);
   display: grid;
   gap: 4px;
+}
+
+body.video-active .countdown-item {
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .countdown-item .value {
@@ -589,6 +630,10 @@ h3 {
   box-shadow: 0 12px 24px rgba(44, 36, 27, 0.12);
 }
 
+body.video-active .contact-card {
+  background: rgba(255, 255, 255, 0.92);
+}
+
 .contact-link {
   font-weight: 800;
   color: var(--ink);
@@ -708,6 +753,12 @@ textarea {
   transition: border 160ms ease, box-shadow 160ms ease;
 }
 
+body.video-active input,
+body.video-active select,
+body.video-active textarea {
+  background: rgba(255, 255, 255, 0.50);
+}
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -744,7 +795,7 @@ textarea:focus {
   border: 1px solid rgba(132, 104, 81, 0.16);
   border-radius: 16px;
   padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.50);
   display: grid;
   gap: 8px;
 }
