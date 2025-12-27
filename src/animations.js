@@ -13,21 +13,27 @@ export const setupAnimations = () => {
     delay: 0.2,
   })
 
-  gsap.from('.hero-frame', {
-    opacity: 0,
-    scale: 1.04,
-    duration: 1,
-    delay: 0.3,
-    ease: 'power2.out',
-  })
+  const heroBg = document.querySelector('.hero-bg')
+  if (heroBg) {
+    gsap.from(heroBg, {
+      opacity: 0,
+      scale: 1.02,
+      duration: 1,
+      delay: 0.25,
+      ease: 'power2.out',
+    })
+  }
 
-  gsap.from('.hero-video', {
-    opacity: 0,
-    y: 20,
-    duration: 1,
-    delay: 0.5,
-    ease: 'power2.out',
-  })
+  const heroVideo = document.querySelector('.hero-bg-video')
+  if (heroVideo) {
+    gsap.from(heroVideo, {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      delay: 0.4,
+      ease: 'power2.out',
+    })
+  }
 
   gsap.from('.location-card', {
     scrollTrigger: {
@@ -94,6 +100,20 @@ export const setupAnimations = () => {
     })
   })
 
+  const mobileSlider = document.querySelector('.mobile-slider')
+  if (mobileSlider) {
+    gsap.from(mobileSlider, {
+      scrollTrigger: {
+        trigger: mobileSlider,
+        start: 'top 96%',
+      },
+      opacity: 0,
+      y: 18,
+      duration: 0.7,
+      ease: 'power2.out',
+    })
+  }
+
   gsap.from('.rsvp-form', {
     scrollTrigger: {
       trigger: '.rsvp-form',
@@ -103,5 +123,47 @@ export const setupAnimations = () => {
     opacity: 0,
     duration: 0.9,
     ease: 'power2.out',
+  })
+
+  gsap.utils.toArray('.countdown-item').forEach((item, index) => {
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 92%',
+      },
+      scale: 0.9,
+      opacity: 0,
+      duration: 0.7,
+      delay: index * 0.05,
+      ease: 'power2.out',
+    })
+  })
+
+  gsap.utils.toArray('.kids-card').forEach((item, index) => {
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 92%',
+      },
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      delay: index * 0.04,
+      ease: 'power2.out',
+    })
+  })
+
+  gsap.utils.toArray('.contact-card').forEach((card, index) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 92%',
+      },
+      y: 18,
+      opacity: 0,
+      duration: 0.7,
+      delay: index * 0.05,
+      ease: 'power2.out',
+    })
   })
 }

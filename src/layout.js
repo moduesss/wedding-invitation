@@ -4,16 +4,16 @@ export const renderLayout = (app) => {
       <div class="envelope-perspective">
         <div class="envelope" aria-label="Открыть приглашение">
           <div class="envelope-canvases">
+          <div class="envelope-text">
+            <div class="script">С любовью</div>
+            <div class="names">Максим & Дарья</div>
+            <div class="date">27 · 06 · 2026</div>
+          </div>
             <canvas id="env-base"></canvas>
             <canvas class="env-part" id="env-top"></canvas>
             <canvas class="env-part" id="env-left"></canvas>
             <canvas class="env-part" id="env-right"></canvas>
             <canvas class="env-part" id="env-bottom"></canvas>
-          </div>
-          <div class="envelope-text">
-            <div class="script">С любовью</div>
-            <div class="names">Максим & Дарья</div>
-            <div class="date">27 · 06 · 2026</div>
           </div>
           <div class="seal" id="open-envelope" role="button" aria-label="Открыть конверт" tabindex="0">
             <img src="/media/md.png" alt="Печатка" />
@@ -34,7 +34,7 @@ export const renderLayout = (app) => {
         </div>
         <div class="hero-text">
           <p class="eyebrow">Приглашение</p>
-          <h1>Максим & Дарья</h1>
+          <h1 class="header-text">Максим & Дарья</h1>
           <p class="lead">
             Мы приглашаем вас разделить день, когда наши истории станут одной.
             Тёплый вечер у воды, музыка и свет гирлянд — будем счастливы видеть вас.
@@ -151,13 +151,24 @@ export const renderLayout = (app) => {
         <div class="section-header center">
           <p class="eyebrow">А помните, какими мы были?</p>
           <h2 id="kids-title">Немного детских кадров</h2>
-          <p class="muted">Теплый мудборд из снимков детства — для улыбки перед праздником.</p>
+          <p class="muted">Нажмите на фото — покажем детские снимки.</p>
         </div>
         <div class="kids-grid">
-          <img src="/media/children/IMG_7793.PNG" alt="Детское фото 1" class="kids-card tall" />
-          <img src="/media/children/IMG_7794.PNG" alt="Детское фото 2" class="kids-card" />
-          <img src="/media/children/IMG_7795.PNG" alt="Детское фото 3" class="kids-card wide" />
-          <img src="/media/children/IMG_7796.PNG" alt="Детское фото 4" class="kids-card" />
+          <button class="kids-card tall adult" data-person="daria">
+            <img src="/media/children/1-10.jpg" alt="Дарья" />
+            <span class="kids-label">Дарья</span>
+          </button>
+          <button class="kids-card adult" data-person="maxim">
+            <img src="/media/children/1-58.jpg" alt="Максим" />
+            <span class="kids-label">Максим</span>
+          </button>
+        </div>
+        <div class="modal" id="kids-modal" aria-hidden="true">
+          <div class="modal-backdrop" data-close-modal></div>
+          <div class="modal-content" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close-modal aria-label="Закрыть">×</button>
+            <div class="modal-body" id="kids-modal-body"></div>
+          </div>
         </div>
       </section>
 
@@ -175,8 +186,6 @@ export const renderLayout = (app) => {
           <span class="dot-swatch" style="--tone: #efc8c3"></span>
           <span class="dot-swatch" style="--tone: #9ab48c"></span>
           <span class="dot-swatch" style="--tone: #b9a595"></span>
-          <span class="dot-swatch" style="--tone: #835a40"></span>
-          <span class="dot-swatch" style="--tone: #3f362e"></span>
         </div>
       </section>
 
@@ -187,22 +196,38 @@ export const renderLayout = (app) => {
         </div>
         <div class="gallery-grid">
           <div class="gallery-card tall">
-            <img src="/media/IMG_7352.JPG" alt="Мы" />
+            <img src="/media/1-1.jpg" alt="Кадр 1" />
           </div>
           <div class="gallery-card wide">
-            <img src="/media/IMG_7364.JPG" alt="Наша прогулка" />
+            <img src="/media/1-24.jpg" alt="Кадр 2" />
           </div>
           <div class="gallery-card">
-            <img src="/media/IMG_7374.JPG" alt="Тепло заката" />
+            <img src="/media/1-26.jpg" alt="Кадр 3" />
           </div>
           <div class="gallery-card">
-            <img src="/media/IMG_7358.JPG" alt="Максим и Дарья" />
-          </div>
-          <div class="gallery-card video-card">
-            <video src="/media/IMG_7378.MP4" controls loop playsinline></video>
+            <img src="/media/1-32.jpg" alt="Кадр 4" />
           </div>
           <div class="gallery-card">
-            <img src="/media/IMG_7793.PNG" alt="Детали" />
+            <img src="/media/1-42.jpg" alt="Кадр 5" />
+          </div>
+          <div class="gallery-card">
+            <img src="/media/1-53.jpg" alt="Кадр 6" />
+          </div>
+          <div class="gallery-card">
+            <img src="/media/1-55.jpg" alt="Кадр 7" />
+          </div>
+        </div>
+        <div class="mobile-slider" id="mobile-slider">
+          <div class="mobile-slide active"><img src="/media/1-1.jpg" alt="Кадр 1" /></div>
+          <div class="mobile-slide"><img src="/media/1-24.jpg" alt="Кадр 2" /></div>
+          <div class="mobile-slide"><img src="/media/1-26.jpg" alt="Кадр 3" /></div>
+          <div class="mobile-slide"><img src="/media/1-32.jpg" alt="Кадр 4" /></div>
+          <div class="mobile-slide"><img src="/media/1-42.jpg" alt="Кадр 5" /></div>
+          <div class="mobile-slide"><img src="/media/1-53.jpg" alt="Кадр 6" /></div>
+          <div class="slider-controls" aria-hidden="false">
+            <button class="slider-arrow prev" type="button" aria-label="Предыдущее фото">‹</button>
+            <div class="slider-dots" role="tablist" aria-label="Слайды галереи"></div>
+            <button class="slider-arrow next" type="button" aria-label="Следующее фото">›</button>
           </div>
         </div>
       </section>
@@ -240,7 +265,7 @@ export const renderLayout = (app) => {
       <section class="section rsvp" id="rsvp" aria-labelledby="rsvp-title">
         <div class="section-header center">
           <p class="eyebrow">RSVP</p>
-          <h2 id="rsvp-title">Подтвердите присутствие до 10 мая</h2>
+          <h2 id="rsvp-title">Подтвердите присутствие до 1 мая</h2>
           <p class="muted">
             Это поможет подготовить меню и рассадку. Ответ занимает минуту.
           </p>
@@ -252,8 +277,8 @@ export const renderLayout = (app) => {
               <input type="text" name="name" placeholder="Ваше имя" required />
             </label>
             <label>
-              Email или телефон
-              <input type="text" name="contact" placeholder="+7..." required />
+              Телефон
+              <input type="phone" name="contact" placeholder="+7..." required />
             </label>
             <label>
               Статус
