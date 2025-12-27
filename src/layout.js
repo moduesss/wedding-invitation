@@ -160,7 +160,6 @@ export const renderLayout = (app) => {
           <p class="eyebrow">А помните, какими мы были?</p>
           <h2 id="kids-title">Немного детских кадров</h2>
           <p class="muted">Нажмите на фото — покажем детские снимки.</p>
-          <p class="muted">Нажмите на фото — покажем детские снимки.</p>
         </div>
         <div class="kids-grid">
           <button class="kids-card tall adult" data-person="daria">
@@ -275,7 +274,6 @@ export const renderLayout = (app) => {
         <div class="section-header center">
           <p class="eyebrow">RSVP</p>
           <h2 id="rsvp-title">Подтвердите присутствие до 1 мая</h2>
-          <h2 id="rsvp-title">Подтвердите присутствие до 1 мая</h2>
           <p class="muted">
             Это поможет подготовить меню и рассадку. Ответ занимает минуту.
           </p>
@@ -287,8 +285,6 @@ export const renderLayout = (app) => {
               <input type="text" name="name" placeholder="Ваше имя" required />
             </label>
             <label>
-              Телефон
-              <input type="phone" name="contact" placeholder="+7..." required />
               Телефон
               <input type="phone" name="contact" placeholder="+7..." required />
             </label>
