@@ -824,7 +824,7 @@ textarea:focus {
 
 .form-status {
   font-weight: 700;
-  color: var(--sage);
+  color: var(--ink);
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 200ms ease, transform 200ms ease;

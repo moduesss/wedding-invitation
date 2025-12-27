@@ -294,24 +294,25 @@ export const renderLayout = (app) => {
             </label>
             <label>
               Телефон
-              <input type="phone" name="contact" placeholder="+7..." required />
+              <input type="tel" name="contact" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel" required />
             </label>
             <label>
               Статус
               <select name="status" required>
                 <option value="">Выберите вариант</option>
-                <option value="yes">Буду с вами</option>
-                <option value="no">Не смогу присутствовать</option>
+                <option value="Да">Буду с вами</option>
+                <option value="Нет">Не смогу присутствовать</option>
               </select>
             </label>
           </div>
           <fieldset class="alcohol">
             <legend>Предпочтения по напиткам</legend>
-            <label><input type="checkbox" name="alcohol" value="sparkling" /> Игристое</label>
-            <label><input type="checkbox" name="alcohol" value="white" /> Белое вино</label>
-            <label><input type="checkbox" name="alcohol" value="red" /> Красное вино</label>
-            <label><input type="checkbox" name="alcohol" value="whiskey" /> Виски</label>
-            <label><input type="checkbox" name="alcohol" value="no-alcohol" /> Без алкоголя</label>
+            <label><input type="checkbox" name="alcohol" value="Игристое вино" /> Игристое</label>
+            <label><input type="checkbox" name="alcohol" value="Белое вино" /> Белое вино</label>
+            <label><input type="checkbox" name="alcohol" value="Красное вино" /> Красное вино</label>
+            <label><input type="checkbox" name="alcohol" value="Коньяк" /> Коньяк</label>
+            <label><input type="checkbox" name="alcohol" value="Виски" /> Виски</label>
+            <label><input type="checkbox" name="alcohol" value="Без алкоголя" /> Без алкоголя</label>
           </fieldset>
           <label class="full">
             Сообщение
