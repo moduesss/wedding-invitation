@@ -6,6 +6,8 @@ import { setupEnvelope } from './envelope'
 import { setupForm } from './form'
 import { setupAnimations } from './animations'
 import { setupCountdown } from './countdown'
+import { setupMobileSlider } from './slider'
+import { setupKids } from './kids'
 
 const app = document.querySelector('#app')
 renderLayout(app)
@@ -18,3 +20,5 @@ setupSmoothScroll()
 setupForm()
 setupAnimations()
 setupCountdown()
+setupMobileSlider()
+setupKids()
