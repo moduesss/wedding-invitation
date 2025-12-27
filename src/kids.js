@@ -1,8 +1,9 @@
 import gsap from 'gsap'
 
+const base = import.meta.env.BASE_URL
 const kidsImages = {
-  daria: ['/media/children/IMG_7793.PNG', '/media/children/IMG_7794.PNG'],
-  maxim: ['/media/children/IMG_7795.PNG', '/media/children/IMG_7796.PNG'],
+  daria: [`${base}media/children/IMG_7793.PNG`, `${base}media/children/IMG_7794.PNG`],
+  maxim: [`${base}media/children/IMG_7795.PNG`, `${base}media/children/IMG_7796.PNG`],
 }
 
 export const setupKids = () => {

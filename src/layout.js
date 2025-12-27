@@ -1,3 +1,5 @@
+const base = import.meta.env.BASE_URL
+
 export const renderLayout = (app) => {
   app.innerHTML = `
     <div class="envelope-overlay" id="envelope-overlay">
@@ -16,7 +18,7 @@ export const renderLayout = (app) => {
             <canvas class="env-part" id="env-bottom"></canvas>
           </div>
           <div class="seal" id="open-envelope" role="button" aria-label="Открыть конверт" tabindex="0">
-            <img src="/media/md.png" alt="Печатка" />
+            <img src="${base}media/md.png" alt="Печатка" />
           </div>
           <div class="seal-note-card">Нажмите, чтобы открыть</div>
         </div>
@@ -29,7 +31,7 @@ export const renderLayout = (app) => {
 
       <header class="hero classic" id="top">
         <div class="hero-bg">
-          <video class="hero-bg-video" src="/media/IMG_7378.MP4" autoplay muted loop playsinline></video>
+          <video class="hero-bg-video" src="${base}media/IMG_7378.MP4" autoplay muted loop playsinline></video>
           <div class="hero-bg-overlay"></div>
         </div>
         <div class="hero-text">
@@ -155,11 +157,11 @@ export const renderLayout = (app) => {
         </div>
         <div class="kids-grid">
           <button class="kids-card tall adult" data-person="daria">
-            <img src="/media/children/1-10.jpg" alt="Дарья" />
+            <img src="${base}media/children/1-10.jpg" alt="Дарья" />
             <span class="kids-label">Дарья</span>
           </button>
           <button class="kids-card adult" data-person="maxim">
-            <img src="/media/children/1-58.jpg" alt="Максим" />
+            <img src="${base}media/children/1-58.jpg" alt="Максим" />
             <span class="kids-label">Максим</span>
           </button>
         </div>
@@ -196,34 +198,34 @@ export const renderLayout = (app) => {
         </div>
         <div class="gallery-grid">
           <div class="gallery-card tall">
-            <img src="/media/1-1.jpg" alt="Кадр 1" />
+            <img src="${base}media/1-1.jpg" alt="Кадр 1" />
           </div>
           <div class="gallery-card wide">
-            <img src="/media/1-24.jpg" alt="Кадр 2" />
+            <img src="${base}media/1-24.jpg" alt="Кадр 2" />
           </div>
           <div class="gallery-card">
-            <img src="/media/1-26.jpg" alt="Кадр 3" />
+            <img src="${base}media/1-26.jpg" alt="Кадр 3" />
           </div>
           <div class="gallery-card">
-            <img src="/media/1-32.jpg" alt="Кадр 4" />
+            <img src="${base}media/1-32.jpg" alt="Кадр 4" />
           </div>
           <div class="gallery-card">
-            <img src="/media/1-42.jpg" alt="Кадр 5" />
+            <img src="${base}media/1-42.jpg" alt="Кадр 5" />
           </div>
           <div class="gallery-card">
-            <img src="/media/1-53.jpg" alt="Кадр 6" />
+            <img src="${base}media/1-53.jpg" alt="Кадр 6" />
           </div>
           <div class="gallery-card">
-            <img src="/media/1-55.jpg" alt="Кадр 7" />
+            <img src="${base}media/1-55.jpg" alt="Кадр 7" />
           </div>
         </div>
         <div class="mobile-slider" id="mobile-slider">
-          <div class="mobile-slide active"><img src="/media/1-1.jpg" alt="Кадр 1" /></div>
-          <div class="mobile-slide"><img src="/media/1-24.jpg" alt="Кадр 2" /></div>
-          <div class="mobile-slide"><img src="/media/1-26.jpg" alt="Кадр 3" /></div>
-          <div class="mobile-slide"><img src="/media/1-32.jpg" alt="Кадр 4" /></div>
-          <div class="mobile-slide"><img src="/media/1-42.jpg" alt="Кадр 5" /></div>
-          <div class="mobile-slide"><img src="/media/1-53.jpg" alt="Кадр 6" /></div>
+          <div class="mobile-slide active"><img src="${base}media/1-1.jpg" alt="Кадр 1" /></div>
+          <div class="mobile-slide"><img src="${base}media/1-24.jpg" alt="Кадр 2" /></div>
+          <div class="mobile-slide"><img src="${base}media/1-26.jpg" alt="Кадр 3" /></div>
+          <div class="mobile-slide"><img src="${base}media/1-32.jpg" alt="Кадр 4" /></div>
+          <div class="mobile-slide"><img src="${base}media/1-42.jpg" alt="Кадр 5" /></div>
+          <div class="mobile-slide"><img src="${base}media/1-53.jpg" alt="Кадр 6" /></div>
           <div class="slider-controls" aria-hidden="false">
             <button class="slider-arrow prev" type="button" aria-label="Предыдущее фото">‹</button>
             <div class="slider-dots" role="tablist" aria-label="Слайды галереи"></div>
@@ -308,6 +310,6 @@ export const renderLayout = (app) => {
         </form>
       </section>
     </div>
-    <audio id="wedding-song" src="/audio/song.mp3" preload="auto" autoplay loop></audio>
+    <audio id="wedding-song" src="${base}audio/song.mp3" preload="auto" autoplay loop></audio>
   `
 }

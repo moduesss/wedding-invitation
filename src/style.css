@@ -290,6 +290,9 @@ h3 {
 }
 
 .timeline-list {
+  --timeline-time: 90px;
+  --timeline-dot: 24px;
+  --timeline-gap: 12px;
   display: grid;
   gap: 22px;
   position: relative;
@@ -298,7 +301,7 @@ h3 {
 .timeline-list::before {
   content: '';
   position: absolute;
-  left: 100px;
+  left: calc(var(--timeline-time) + var(--timeline-gap) + (var(--timeline-dot) / 2));
   top: 0;
   bottom: 0;
   width: 1px;
@@ -307,9 +310,10 @@ h3 {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 90px 24px 1fr;
+  grid-template-columns: var(--timeline-time) var(--timeline-dot) 1fr;
   align-items: start;
-  gap: 12px;
+  column-gap: var(--timeline-gap);
+  row-gap: 12px;
   position: relative;
   padding: 10px 0;
 }
@@ -823,8 +827,26 @@ textarea:focus {
   border-radius: 0;
   border: none;
   cursor: pointer;
-  z-index: 2;
+  z-index: 4;
   box-shadow: none;
+}
+
+.seal-note-card {
+  position: absolute;
+  left: 50%;
+  top: 64%;
+  transform: translate(-50%, -50%) rotate(-3deg);
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(132, 104, 81, 0.2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  box-shadow: 0 10px 20px rgba(47, 41, 34, 0.18);
+  z-index: 3;
+  pointer-events: none;
 }
 
 .seal img {
@@ -841,7 +863,7 @@ textarea:focus {
 
 .envelope-text {
   position: absolute;
-  top: 3%;
+  top: 10%;
   left: 0;
   right: 0;
   display: grid;
@@ -851,6 +873,7 @@ textarea:focus {
   color: #f8f4ef;
   text-shadow: 0 12px 26px rgba(47, 41, 34, 0.35);
   pointer-events: none;
+  z-index: 2;
 }
 
 .envelope-text .names {
@@ -873,8 +896,9 @@ textarea:focus {
 }
 
 @media (max-width: 1024px) {
-  .timeline-list::before {
-    left: 90px;
+  .timeline-list {
+    --timeline-time: 90px;
+    --timeline-dot: 24px;
   }
 }
 
@@ -894,12 +918,16 @@ textarea:focus {
   }
 
   .timeline-item {
-    grid-template-columns: 70px 18px 1fr;
     align-items: start;
   }
 
-  .timeline-list::before {
-    left: 70px;
+  .calendar-pill {
+    width: 100%;
+  }
+
+  .timeline-list {
+    --timeline-time: 70px;
+    --timeline-dot: 18px;
   }
 
   .hero-text {
@@ -914,7 +942,7 @@ textarea:focus {
   .seal-note-card {
     left: 58%;
     top: 62%;
-    transform: rotate(-3deg);
+    transform: translate(-50%, -50%) rotate(-3deg);
   }
 
   .gallery-grid {
